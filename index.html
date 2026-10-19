@@ -22,41 +22,70 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="./CSS/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
     <header class="site-header">
-      <div class="container nav-wrap">
-        <h1 class="logo">
-          <a href="index.html"
-            ><span class="logo-mark"
-              ><i class="bi bi-chevron-double-right"></i></span
-            ><span>NEXT <b>DRIVE</b></span></a
+      <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+        <div class="container">
+          <a
+            class="navbar-brand logo"
+            href="index.html"
+            aria-label="Next Drive, inicio"
           >
-        </h1>
-        <nav aria-label="Navegación principal">
-          <a href="nosotros.html">Nosotros</a>
-          <a href="catalogo.html">Catálogo</a>
-          <a href="servicios.html">Servicios</a>
-          <a href="contacto.html">Contacto</a>
-        </nav>
-      </div>
+            <span class="logo-mark"
+              ><i class="bi bi-chevron-double-right"></i
+            ></span>
+            <span>NEXT <b>DRIVE</b></span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="catalogo.html">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicios.html">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Mantenimiento que te mueve</span>
-            <h2>Next Drive</h2>
+            <h1>Next Drive</h1>
             <p>
               Expertos en mantenimiento, productos y cuidado integral para que
               tu vehículo siempre esté listo para la próxima ruta.
             </p>
-            <div class="hero-actions">
+            <div class="hero-actions d-flex gap-3">
               <a class="btn btn-primary" href="nosotros.html">Conócenos</a>
               <a class="btn btn-outline" href="catalogo.html">Ver catálogo</a>
             </div>
-            <div class="hero-note">
+            <div class="hero-note d-flex align-items-center gap-3">
               <i class="bi bi-geo-alt"></i>
               <span
                 >Atención en San Borja
@@ -85,61 +114,69 @@
             <span>Productos destacados</span>
             <h2>Todo lo que tu vehículo necesita.</h2>
           </div>
-          <div class="grid-4">
-            <article class="card product-card">
-              <div class="product-image">
-                <img
-                  src="https://images.unsplash.com/photo-1665944956738-7bde2372622d?auto=format&fit=crop&w=1200&q=85"
-                  alt="Aceite sintético 5W-30"
-                />
-              </div>
-              <div class="card-body">
-                <h3>Aceite sintético 5W-30</h3>
-                <p>Rendimiento probado y garantía Next Drive.</p>
-                <div class="card-foot"><strong>S/ 189</strong></div>
-              </div>
-            </article>
-            <article class="card product-card">
-              <div class="product-image">
-                <img
-                  src="https://images.unsplash.com/photo-1548794889-54c0f5c9a582?auto=format&fit=crop&w=1200&q=85"
-                  alt="Batería premium 15 placas"
-                />
-              </div>
-              <div class="card-body">
-                <h3>Batería premium 15 placas</h3>
-                <p>Rendimiento probado y garantía Next Drive.</p>
-                <div class="card-foot"><strong>S/ 429</strong></div>
-              </div>
-            </article>
-            <article class="card product-card">
-              <div class="product-image">
-                <img
-                  src="https://images.unsplash.com/photo-1567152023727-f7442eaa1dda?auto=format&fit=crop&w=1200&q=85"
-                  alt="Neumático Touring 205/55"
-                />
-              </div>
-              <div class="card-body">
-                <h3>Neumático Touring 205/55</h3>
-                <p>Rendimiento probado y garantía Next Drive.</p>
-                <div class="card-foot"><strong>S/ 319</strong></div>
-              </div>
-            </article>
-            <article class="card product-card">
-              <div class="product-image">
-                <img
-                  src="https://images.unsplash.com/photo-1584299789116-c34af66e6046?auto=format&fit=crop&w=1200&q=85"
-                  alt="Kit de limpieza interior"
-                />
-              </div>
-              <div class="card-body">
-                <h3>Kit de limpieza interior</h3>
-                <p>Rendimiento probado y garantía Next Drive.</p>
-                <div class="card-foot"><strong>S/ 129</strong></div>
-              </div>
-            </article>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <article class="card product-card">
+                <div class="product-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1665944956738-7bde2372622d?auto=format&fit=crop&w=1200&q=85"
+                    alt="Aceite sintético 5W-30"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3>Aceite sintético 5W-30</h3>
+                  <p>Rendimiento probado y garantía Next Drive.</p>
+                  <div class="card-foot"><strong>S/ 189</strong></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-6 col-md-3">
+              <article class="card product-card">
+                <div class="product-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1548794889-54c0f5c9a582?auto=format&fit=crop&w=1200&q=85"
+                    alt="Batería premium 15 placas"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3>Batería premium 15 placas</h3>
+                  <p>Rendimiento probado y garantía Next Drive.</p>
+                  <div class="card-foot"><strong>S/ 429</strong></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-6 col-md-3">
+              <article class="card product-card">
+                <div class="product-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1567152023727-f7442eaa1dda?auto=format&fit=crop&w=1200&q=85"
+                    alt="Neumático Touring 205/55"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3>Neumático Touring 205/55</h3>
+                  <p>Rendimiento probado y garantía Next Drive.</p>
+                  <div class="card-foot"><strong>S/ 319</strong></div>
+                </div>
+              </article>
+            </div>
+            <div class="col-6 col-md-3">
+              <article class="card product-card">
+                <div class="product-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1584299789116-c34af66e6046?auto=format&fit=crop&w=1200&q=85"
+                    alt="Kit de limpieza interior"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3>Kit de limpieza interior</h3>
+                  <p>Rendimiento probado y garantía Next Drive.</p>
+                  <div class="card-foot"><strong>S/ 129</strong></div>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="center-action">
+          <div class="center-action d-flex justify-content-center mt-4">
             <a class="btn btn-outline" href="catalogo.html"
               >Ver catálogo completo <i class="bi bi-arrow-right"></i
             ></a>
@@ -152,59 +189,69 @@
             <span>Nuestros servicios</span>
             <h2>Cuidado completo, en un solo lugar.</h2>
           </div>
-          <div class="grid-4">
-            <article class="card service-card">
-              <span class="icon-box"><i class="bi bi-shield-check"></i></span>
-              <h3>Mantenimiento preventivo</h3>
-              <p>Aceite, filtros, afinamiento y revisión por kilometraje.</p>
-              <div class="card-foot">
-                <strong>Desde S/ 000</strong
-                ><a
-                  href="servicios.html#srv-preventivo"
-                  aria-label="Ver Mantenimiento preventivo"
-                  ><i class="bi bi-arrow-up-right"></i
-                ></a>
-              </div>
-            </article>
-            <article class="card service-card">
-              <span class="icon-box"><i class="bi bi-tools"></i></span>
-              <h3>Mantenimiento correctivo</h3>
-              <p>Frenos, suspensión, dirección y sistema eléctrico.</p>
-              <div class="card-foot">
-                <strong>Desde S/ 000</strong
-                ><a
-                  href="servicios.html#srv-correctivo"
-                  aria-label="Ver Mantenimiento correctivo"
-                  ><i class="bi bi-arrow-up-right"></i
-                ></a>
-              </div>
-            </article>
-            <article class="card service-card">
-              <span class="icon-box"><i class="bi bi-life-preserver"></i></span>
-              <h3>Neumáticos</h3>
-              <p>Alineamiento, balanceo, cambio y rotación.</p>
-              <div class="card-foot">
-                <strong>Desde S/ 000</strong
-                ><a
-                  href="servicios.html#srv-neumaticos"
-                  aria-label="Ver Neumáticos"
-                  ><i class="bi bi-arrow-up-right"></i
-                ></a>
-              </div>
-            </article>
-            <article class="card service-card">
-              <span class="icon-box"><i class="bi bi-stars"></i></span>
-              <h3>Cuidado estético</h3>
-              <p>Lavado, encerado y limpieza profunda de interiores.</p>
-              <div class="card-foot">
-                <strong>Desde S/ 000</strong
-                ><a
-                  href="servicios.html#srv-estetico"
-                  aria-label="Ver Cuidado estético"
-                  ><i class="bi bi-arrow-up-right"></i
-                ></a>
-              </div>
-            </article>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <article class="card service-card">
+                <span class="icon-box"><i class="bi bi-shield-check"></i></span>
+                <h3>Mantenimiento preventivo</h3>
+                <p>Aceite, filtros, afinamiento y revisión por kilometraje.</p>
+                <div class="card-foot">
+                  <strong>Desde S/ 000</strong
+                  ><a
+                    href="servicios.html#srv-preventivo"
+                    aria-label="Ver Mantenimiento preventivo"
+                    ><i class="bi bi-arrow-up-right"></i
+                  ></a>
+                </div>
+              </article>
+            </div>
+            <div class="col-6 col-md-3">
+              <article class="card service-card">
+                <span class="icon-box"><i class="bi bi-tools"></i></span>
+                <h3>Mantenimiento correctivo</h3>
+                <p>Frenos, suspensión, dirección y sistema eléctrico.</p>
+                <div class="card-foot">
+                  <strong>Desde S/ 000</strong
+                  ><a
+                    href="servicios.html#srv-correctivo"
+                    aria-label="Ver Mantenimiento correctivo"
+                    ><i class="bi bi-arrow-up-right"></i
+                  ></a>
+                </div>
+              </article>
+            </div>
+            <div class="col-6 col-md-3">
+              <article class="card service-card">
+                <span class="icon-box"
+                  ><i class="bi bi-life-preserver"></i
+                ></span>
+                <h3>Neumáticos</h3>
+                <p>Alineamiento, balanceo, cambio y rotación.</p>
+                <div class="card-foot">
+                  <strong>Desde S/ 000</strong
+                  ><a
+                    href="servicios.html#srv-neumaticos"
+                    aria-label="Ver Neumáticos"
+                    ><i class="bi bi-arrow-up-right"></i
+                  ></a>
+                </div>
+              </article>
+            </div>
+            <div class="col-6 col-md-3">
+              <article class="card service-card">
+                <span class="icon-box"><i class="bi bi-stars"></i></span>
+                <h3>Cuidado estético</h3>
+                <p>Lavado, encerado y limpieza profunda de interiores.</p>
+                <div class="card-foot">
+                  <strong>Desde S/ 000</strong
+                  ><a
+                    href="servicios.html#srv-estetico"
+                    aria-label="Ver Cuidado estético"
+                    ><i class="bi bi-arrow-up-right"></i
+                  ></a>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -214,43 +261,88 @@
             <span>Guías de cuidado</span>
             <h2>Aprende a cuidar mejor tu vehículo.</h2>
           </div>
-          <div class="grid-3">
-            <article class="video-card">
-              <div class="video-thumb">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/O1hF25Cowv8"
-                  title="5 señales para cambiar el aceite"
-                  loading="lazy"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <span class="video-label">GUÍA · 4 MIN</span>
-              <h3>5 señales para cambiar el aceite</h3>
-            </article>
-            <article class="video-card">
-              <div class="video-thumb">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/XQNkP5Ge-_I"
-                  title="Cómo revisar la presión"
-                  loading="lazy"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <span class="video-label">GUÍA · 4 MIN</span>
-              <h3>Cómo revisar la presión</h3>
-            </article>
-            <article class="video-card">
-              <div class="video-thumb">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/CFXfSBR5Q9w"
-                  title="Cuida la pintura del sol"
-                  loading="lazy"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <span class="video-label">GUÍA · 4 MIN</span>
-              <h3>Cuida la pintura del sol</h3>
-            </article>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <article class="video-card">
+                <div class="video-thumb">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/7ppKovkCnGA?si=JhiCpw6gSavNYxHD"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <span class="video-label">GUÍA · 3:02 MIN</span>
+                <h3>5 errores al cambiar el aceite de su coche</h3>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="video-card">
+                <div class="video-thumb">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/Nrs3R5G37Y0?si=xupSiqdTuzvH85tO"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <span class="video-label">GUÍA · 4:07 MIN</span>
+                <h3>Aprenda a realizar una revisión básica de su carro</h3>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="video-card">
+                <div class="video-thumb">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/vtOYeVWDs-Y?si=_sw7Y7O9qYaoyrsi"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <span class="video-label">GUÍA · 5:24 MIN</span>
+                <h3>
+                  Proteja la pintura de su automóvil de polvo, lluvia y rayos UV
+                  con cera cerámica híbrida
+                </h3>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -260,31 +352,40 @@
             <span>Promoción del mes</span>
             <h2>Más cuidado por menos.</h2>
           </div>
-          <div class="grid-3">
-            <article class="promo-card">
-              <span class="badge badge-accent" role="status">AHORRA 15%</span>
-              <h3>Pack ruta segura</h3>
-              <p>Diagnóstico completo y atención especializada.</p>
-              <div><span>Desde</span><strong>S/ 199</strong></div>
-              <span class="promo-validity">Válido hasta el 31 de diciembre</span
-              ><a class="btn btn-accent" href="contacto.html">Cotizar</a>
-            </article>
-            <article class="promo-card">
-              <span class="badge badge-accent" role="status">AHORRA 20%</span>
-              <h3>Servicio de frenos</h3>
-              <p>Diagnóstico completo y atención especializada.</p>
-              <div><span>Desde</span><strong>S/ 249</strong></div>
-              <span class="promo-validity">Válido hasta el 31 de diciembre</span
-              ><a class="btn btn-accent" href="contacto.html">Cotizar</a>
-            </article>
-            <article class="promo-card">
-              <span class="badge badge-accent" role="status">AHORRA 25%</span>
-              <h3>Detailing esencial</h3>
-              <p>Diagnóstico completo y atención especializada.</p>
-              <div><span>Desde</span><strong>S/ 299</strong></div>
-              <span class="promo-validity">Válido hasta el 31 de diciembre</span
-              ><a class="btn btn-accent" href="contacto.html">Cotizar</a>
-            </article>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <article class="promo-card">
+                <span class="badge badge-accent" role="status">AHORRA 15%</span>
+                <h3>Pack ruta segura</h3>
+                <p>Diagnóstico completo y atención especializada.</p>
+                <div><span>Desde</span><strong>S/ 199</strong></div>
+                <span class="promo-validity"
+                  >Válido hasta el 31 de diciembre</span
+                ><a class="btn btn-accent" href="contacto.html">Cotizar</a>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="promo-card">
+                <span class="badge badge-accent" role="status">AHORRA 20%</span>
+                <h3>Servicio de frenos</h3>
+                <p>Diagnóstico completo y atención especializada.</p>
+                <div><span>Desde</span><strong>S/ 249</strong></div>
+                <span class="promo-validity"
+                  >Válido hasta el 31 de diciembre</span
+                ><a class="btn btn-accent" href="contacto.html">Cotizar</a>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="promo-card">
+                <span class="badge badge-accent" role="status">AHORRA 25%</span>
+                <h3>Detailing esencial</h3>
+                <p>Diagnóstico completo y atención especializada.</p>
+                <div><span>Desde</span><strong>S/ 299</strong></div>
+                <span class="promo-validity"
+                  >Válido hasta el 31 de diciembre</span
+                ><a class="btn btn-accent" href="contacto.html">Cotizar</a>
+              </article>
+            </div>
           </div>
         </div>
       </section>

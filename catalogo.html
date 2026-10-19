@@ -22,28 +22,58 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="./CSS/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
     <header class="site-header">
-      <div class="container nav-wrap">
-        <h1 class="logo">
-          <a href="index.html"
-            ><span class="logo-mark"
-              ><i class="bi bi-chevron-double-right"></i></span
-            ><span>NEXT <b>DRIVE</b></span></a
+      <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+        <div class="container">
+          <a
+            class="navbar-brand logo"
+            href="index.html"
+            aria-label="Next Drive, inicio"
           >
-        </h1>
-        <nav aria-label="Navegación principal">
-          <a href="nosotros.html">Nosotros</a
-          ><a href="catalogo.html" aria-current="page">Catálogo</a
-          ><a href="servicios.html">Servicios</a
-          ><a href="contacto.html">Contacto</a>
-        </nav>
-      </div>
+            <span class="logo-mark"
+              ><i class="bi bi-chevron-double-right"></i
+            ></span>
+            <span>NEXT <b>DRIVE</b></span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="catalogo.html">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicios.html">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
-      <section class="section surface" id="catalogo">
+      <!-- BLANCO: banner -->
+      <section class="section pb-0" id="catalogo">
         <div class="container">
           <div class="page-header">
             <div class="breadcrumb">
@@ -57,23 +87,30 @@
             </p>
           </div>
         </div>
-        <div class="anchor-nav">
-          <div class="container">
-            <nav
-              class="nav nav-pills justify-content-center gap-3"
-              aria-label="Navegación de categorías"
-            >
-              <a class="nav-link" href="#lubricantes">Lubricantes</a>
-              <a class="nav-link" href="#neumaticos">Neumáticos</a>
-            </nav>
-          </div>
-        </div>
+      </section>
+
+      <!-- Barra de categorías (pegajosa) -->
+      <div class="anchor-nav">
         <div class="container">
-          <section class="section" id="lubricantes">
-            <div class="section-title">
-              <h2>Lubricantes y energía.</h2>
-            </div>
-            <div class="grid-4">
+          <nav
+            class="nav nav-pills justify-content-center gap-3"
+            aria-label="Navegación de categorías"
+          >
+            <a class="nav-link" href="#lubricantes">Lubricantes</a>
+            <a class="nav-link" href="#neumaticos">Neumáticos</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- GRIS: lubricantes -->
+      <section class="section surface" id="lubricantes">
+        <div class="container">
+          <div class="section-title">
+            <h2>Lubricantes y energía.</h2>
+          </div>
+          <div class="row g-3">
+            <!-- AQUÍ van tus 4 tarjetas de lubricantes, con class="card product-card" -->
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -87,6 +124,8 @@
                   <div class="card-foot"><strong>S/ 189</strong></div>
                 </div>
               </article>
+            </div>
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -100,6 +139,8 @@
                   <div class="card-foot"><strong>S/ 429</strong></div>
                 </div>
               </article>
+            </div>
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -113,6 +154,8 @@
                   <div class="card-foot"><strong>S/ 159</strong></div>
                 </div>
               </article>
+            </div>
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -127,12 +170,18 @@
                 </div>
               </article>
             </div>
-          </section>
-          <section class="section" id="neumaticos">
-            <div class="section-title">
-              <h2>Neumáticos y cuidado.</h2>
-            </div>
-            <div class="grid-4">
+          </div>
+        </div>
+      </section>
+
+      <!-- BLANCO: neumáticos -->
+      <section class="section" id="neumaticos">
+        <div class="container">
+          <div class="section-title">
+            <h2>Neumáticos y cuidado.</h2>
+          </div>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -146,6 +195,8 @@
                   <div class="card-foot"><strong>S/ 319</strong></div>
                 </div>
               </article>
+            </div>
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -159,6 +210,8 @@
                   <div class="card-foot"><strong>S/ 129</strong></div>
                 </div>
               </article>
+            </div>
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -172,6 +225,8 @@
                   <div class="card-foot"><strong>S/ 279</strong></div>
                 </div>
               </article>
+            </div>
+            <div class="col-6 col-md-3">
               <article class="card">
                 <div class="product-image">
                   <img
@@ -186,7 +241,7 @@
                 </div>
               </article>
             </div>
-          </section>
+          </div>
         </div>
       </section>
     </main>

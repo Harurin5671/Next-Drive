@@ -28,6 +28,8 @@
   --bs-body-font-family: Inter, system-ui, sans-serif;
   --bs-body-color: var(--text);
   --bs-body-bg: #fff;
+
+  --header-h: 76px;
 }
 
 /* ---------- 2. Base ---------- */
@@ -105,14 +107,11 @@ p {
 section[id],
 article[id],
 div[id] {
-  scroll-margin-top: 140px;
+  scroll-margin-top: calc(var(--header-h) + 80px);
 }
 
 /* ---------- 3. Layout ---------- */
 .container {
-  width: 100%;
-  max-width: 1320px;
-  margin-inline: auto;
   padding-inline: 24px;
 }
 
@@ -132,6 +131,7 @@ div[id] {
   background: var(--surface);
 }
 
+/* Grids personalizados para casos especiales */
 .grid-4,
 .grid-3 {
   display: grid;
@@ -160,12 +160,6 @@ div[id] {
 .split > div:first-child p {
   max-width: 540px;
   margin: 0 auto;
-}
-
-.center-action {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
 }
 
 /* ---------- 4. Textos de apoyo ---------- */
@@ -349,10 +343,24 @@ textarea {
   padding: 10px 12px;
   color: var(--text);
   background: #fff;
-  border: 1px solid var(--border);
+  /* border: 1px solid var(--border); */
+  border: 1px solid #94a3b8; /* antes var(--border) */
   border-radius: 8px;
   font: inherit;
   outline: none;
+}
+
+::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+select:invalid {
+  color: var(--muted);
+}
+
+select option {
+  color: var(--text);
 }
 
 input:focus,
@@ -394,14 +402,18 @@ details p {
   padding-right: 32px;
 }
 
-/* ---------- 9. Header y menú ---------- */
 .site-header {
   position: sticky;
-  z-index: 20;
   top: 0;
+  z-index: 20;
   background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 0 #e2e8f0; /* antes: border-bottom */
   backdrop-filter: blur(10px);
+}
+
+.site-header .navbar {
+  min-height: var(--header-h);
+  padding-block: 0;
 }
 
 .nav-wrap {
@@ -411,36 +423,18 @@ details p {
   justify-content: space-between;
 }
 
-nav {
-  display: flex;
-  gap: 38px;
-}
-
-nav a {
-  position: relative;
-  min-height: 44px;
-  display: grid;
-  place-items: center;
+/* Bootstrap navbar overrides */
+.navbar-nav .nav-link {
   color: var(--text-2);
   font-weight: 500;
+  padding: 8px 16px;
 }
 
-nav a:hover {
+.navbar-nav .nav-link:hover {
   color: var(--primary-600);
 }
 
-nav a:hover::after,
-nav a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 3px;
-  height: 2px;
-  background: var(--primary-600);
-}
-
-nav a[aria-current="page"] {
+.navbar-nav .nav-link.active {
   color: var(--primary-600);
   font-weight: 600;
 }
@@ -448,7 +442,7 @@ nav a[aria-current="page"] {
 /* ---------- 10. Hero ---------- */
 .hero {
   overflow: hidden;
-  background: linear-gradient(135deg, var(--primary-50), #fff);
+  background: linear-gradient(135deg, var(--primary-50), #f8fafc);
 }
 
 .hero-grid {
@@ -471,15 +465,10 @@ nav a[aria-current="page"] {
 }
 
 .hero-actions {
-  display: flex;
-  gap: 12px;
   margin: 30px 0 48px;
 }
 
 .hero-note {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   color: var(--primary-600);
 }
 
@@ -555,6 +544,9 @@ nav a[aria-current="page"] {
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
@@ -586,6 +578,9 @@ nav a[aria-current="page"] {
 
 .card-body {
   padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card h3 {
@@ -600,7 +595,8 @@ nav a[aria-current="page"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .card-foot strong {
@@ -801,11 +797,13 @@ nav a[aria-current="page"] {
   margin: 0;
 }
 
-/* ---------- 14. Páginas internas ---------- */
 .page-header {
-  padding: 72px 0;
+  padding: 72px 24px;
   background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+  border: 1px solid var(--primary-100);
+  border-radius: 12px;
   text-align: center;
+  margin-bottom: 55px;
 }
 
 .page-header .breadcrumb {
@@ -843,6 +841,7 @@ nav a[aria-current="page"] {
   gap: 6px;
   padding: 16px;
   background: var(--primary-50);
+  border: 1px solid var(--primary-100);
   border-radius: 8px;
   text-align: center;
   align-items: center;
@@ -883,11 +882,13 @@ nav a[aria-current="page"] {
   align-items: center;
 }
 
+
 .map-frame {
   width: 100%;
   min-height: 350px;
-  border: 0;
+  border: 1px solid var(--border);
   border-radius: 12px;
+  box-shadow: var(--shadow-md);
 }
 
 .location-grid table {
@@ -940,11 +941,13 @@ nav a[aria-current="page"] {
 }
 
 /* ---------- 15. Catálogo, producto y servicios ---------- */
+
 .anchor-nav {
   position: sticky;
-  top: 76px;
+  top: calc(var(--header-h) - 1px); /* -1px tapa cualquier línea de subpíxel */
   z-index: 10;
   background: #fff;
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 16px 0;
 }
@@ -1112,11 +1115,7 @@ nav a[aria-current="page"] {
   padding: 80px 0;
 }
 
-.service-feature:nth-child(even) {
-  background: var(--surface);
-}
-
-.service-feature:nth-child(even) img {
+.service-feature.reverse .split > img {
   order: 2;
 }
 
@@ -1164,7 +1163,7 @@ nav a[aria-current="page"] {
 
 .contact-grid label {
   color: var(--primary-900);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -1172,6 +1171,8 @@ nav a[aria-current="page"] {
 .contact-grid label select,
 .contact-grid label textarea {
   margin-top: 7px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .check {
@@ -1184,6 +1185,7 @@ nav a[aria-current="page"] {
   width: 18px;
   min-height: 18px;
   margin-top: 2px !important;
+  accent-color: var(--primary-600);
 }
 
 .check span {
@@ -1196,9 +1198,27 @@ nav a[aria-current="page"] {
 }
 
 .contact-aside {
+  align-self: start;
   padding: 40px;
-  background: var(--primary-50);
+  color: #cbd5e1;
+  background: var(--primary-900);
   border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-aside .eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #9dcef5;
+}
+
+.contact-aside h2 {
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.contact-aside p {
+  color: #cbd5e1;
 }
 
 .contact-item {
@@ -1210,10 +1230,11 @@ nav a[aria-current="page"] {
 .contact-item > i {
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
   display: grid;
   place-items: center;
-  color: var(--primary-600);
-  background: var(--primary-100);
+  color: #9dcef5;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
 
@@ -1223,12 +1244,12 @@ nav a[aria-current="page"] {
 }
 
 .contact-item small {
-  color: var(--muted);
+  color: #cbd5e1;
 }
 
 .contact-item b {
-  color: var(--primary-900);
-  font-size: 13px;
+  color: #fff;
+  font-size: 14px;
 }
 
 @media (max-width: 900px) {
@@ -1301,12 +1322,17 @@ nav a[aria-current="page"] {
     grid-template-columns: 1fr;
   }
 
+  .contact-grid form button {
+    align-self: stretch;
+  }
+
   .hero-grid {
     padding: 48px 0;
   }
 
-  .hero-copy h2 {
-    font-size: 58px;
+  .hero-copy h1 {
+    margin: 12px 0;
+    font-size: clamp(60px, 7vw, 88px);
   }
 
   .hero-visual {
@@ -1361,7 +1387,7 @@ nav a[aria-current="page"] {
     white-space: nowrap;
   }
 
-  .service-feature:nth-child(even) img {
+  .service-feature.reverse .split > img {
     order: initial;
   }
 

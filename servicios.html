@@ -22,28 +22,58 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="./CSS/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
     <header class="site-header">
-      <div class="container nav-wrap">
-        <h1 class="logo">
-          <a href="index.html"
-            ><span class="logo-mark"
-              ><i class="bi bi-chevron-double-right"></i></span
-            ><span>NEXT <b>DRIVE</b></span></a
+      <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+        <div class="container">
+          <a
+            class="navbar-brand logo"
+            href="index.html"
+            aria-label="Next Drive, inicio"
           >
-        </h1>
-        <nav aria-label="Navegación principal">
-          <a href="nosotros.html">Nosotros</a>
-          <a href="catalogo.html">Catálogo</a>
-          <a href="servicios.html" aria-current="page">Servicios</a>
-          <a href="contacto.html">Contacto</a>
-        </nav>
-      </div>
+            <span class="logo-mark"
+              ><i class="bi bi-chevron-double-right"></i
+            ></span>
+            <span>NEXT <b>DRIVE</b></span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="catalogo.html">Catálogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="servicios.html">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
-      <section class="section surface" id="servicios">
+      <!-- BLANCO: banner -->
+      <section class="section pb-0" id="servicios">
         <div class="container">
           <div class="page-header">
             <div class="breadcrumb">
@@ -57,77 +87,89 @@
             </p>
           </div>
         </div>
-        <div class="anchor-nav">
-          <div class="container">
-            <nav
-              class="nav nav-pills justify-content-center gap-3"
-              aria-label="Navegación de servicios"
-            >
-              <a class="nav-link" href="#srv-preventivo">Preventivo</a>
-              <a class="nav-link" href="#srv-correctivo">Correctivo</a>
-              <a class="nav-link" href="#srv-neumaticos">Neumáticos</a>
-              <a class="nav-link" href="#srv-estetico">Cuidado estético</a>
-            </nav>
+      </section>
+
+      <!-- Barra de servicios (pegajosa) -->
+      <div class="anchor-nav">
+        <div class="container">
+          <nav
+            class="nav nav-pills justify-content-center gap-3"
+            aria-label="Navegación de servicios"
+          >
+            <a class="nav-link" href="#srv-preventivo">Preventivo</a>
+            <a class="nav-link" href="#srv-correctivo">Correctivo</a>
+            <a class="nav-link" href="#srv-neumaticos">Neumáticos</a>
+            <a class="nav-link" href="#srv-estetico">Cuidado estético</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- GRIS -->
+      <section class="service-feature surface" id="srv-preventivo">
+        <div class="container">
+          <div class="split">
+            <img
+              src="https://images.unsplash.com/photo-1632823471799-c3812077da2d?auto=format&fit=crop&w=1200&q=85"
+              alt="Mantenimiento preventivo"
+            />
+            <div>
+              <span class="eyebrow">01 · SERVICIO</span>
+              <h2>Mantenimiento preventivo</h2>
+              <p>
+                Aceite, filtros, afinamiento y revisión por kilometraje.
+                Evaluamos tu vehículo y te explicamos cada recomendación antes
+                de empezar.
+              </p>
+              <h3>Incluye</h3>
+              <ul class="check-list">
+                <li>Aceite y filtros</li>
+                <li>Revisión por kilometraje</li>
+                <li>Afinamiento</li>
+              </ul>
+              <strong class="service-price">Desde S/ 000</strong>
+              <a class="btn btn-primary" href="contacto.html"
+                >Cotizar servicio</a
+              >
+            </div>
           </div>
         </div>
+      </section>
+
+      <!-- BLANCO, imagen a la derecha -->
+      <section class="service-feature reverse" id="srv-correctivo">
         <div class="container">
-          <article class="service-feature" id="srv-preventivo">
-            <div class="split">
-              <img
-                src="https://images.unsplash.com/photo-1632823471799-c3812077da2d?auto=format&fit=crop&w=1200&q=85"
-                alt="Mantenimiento preventivo"
-              />
-              <div>
-                <span class="eyebrow">01 · SERVICIO</span>
-                <h2>Mantenimiento preventivo</h2>
-                <p>
-                  Aceite, filtros, afinamiento y revisión por kilometraje.
-                  Evaluamos tu vehículo y te explicamos cada recomendación antes
-                  de empezar.
-                </p>
-                <h3>Incluye</h3>
-                <ul class="check-list">
-                  <li>Aceite y filtros</li>
-                  <li>Revisión por kilometraje</li>
-                  <li>Afinamiento</li>
-                </ul>
-                <strong class="service-price">Desde S/ 000</strong
-                ><a class="btn btn-primary" href="contacto.html"
-                  >Cotizar servicio</a
-                >
-              </div>
+          <div class="split">
+            <img
+              src="https://images.unsplash.com/photo-1548794889-54c0f5c9a582?auto=format&fit=crop&w=1200&q=85"
+              alt="Mantenimiento correctivo"
+            />
+            <div>
+              <span class="eyebrow">02 · SERVICIO</span>
+              <h2>Mantenimiento correctivo</h2>
+              <p>
+                Frenos, suspensión, dirección y sistema eléctrico. Evaluamos tu
+                vehículo y te explicamos cada recomendación antes de empezar.
+              </p>
+              <h3>Incluye</h3>
+              <ul class="check-list">
+                <li>Frenos</li>
+                <li>Suspensión y dirección</li>
+                <li>Sistema eléctrico y batería</li>
+              </ul>
+              <strong class="service-price">Desde S/ 000</strong
+              ><a class="btn btn-primary" href="contacto.html"
+                >Cotizar servicio</a
+              >
             </div>
-          </article>
-          <article class="service-feature" id="srv-correctivo">
-            <div class="split">
-              <img
-                src="https://images.unsplash.com/photo-1548794889-54c0f5c9a582?auto=format&fit=crop&w=1200&q=85"
-                alt="Mantenimiento correctivo"
-              />
-              <div>
-                <span class="eyebrow">02 · SERVICIO</span>
-                <h2>Mantenimiento correctivo</h2>
-                <p>
-                  Frenos, suspensión, dirección y sistema eléctrico. Evaluamos
-                  tu vehículo y te explicamos cada recomendación antes de
-                  empezar.
-                </p>
-                <h3>Incluye</h3>
-                <ul class="check-list">
-                  <li>Frenos</li>
-                  <li>Suspensión y dirección</li>
-                  <li>Sistema eléctrico y batería</li>
-                </ul>
-                <strong class="service-price">Desde S/ 000</strong
-                ><a class="btn btn-primary" href="contacto.html"
-                  >Cotizar servicio</a
-                >
-              </div>
-            </div>
-          </article>
-          <article class="service-feature" id="srv-neumaticos">
-            <div class="split">
-              <img
+          </div>
+        </div>
+      </section>
+
+      <!-- GRIS -->
+      <section class="service-feature surface" id="srv-neumaticos">
+        <div class="container">
+          <div class="split">
+            <img
                 src="https://images.unsplash.com/photo-1567152023727-f7442eaa1dda?auto=format&fit=crop&w=1200&q=85"
                 alt="Neumáticos"
               />
@@ -149,11 +191,15 @@
                   >Cotizar servicio</a
                 >
               </div>
-            </div>
-          </article>
-          <article class="service-feature" id="srv-estetico">
-            <div class="split">
-              <img
+          </div>
+        </div>
+      </section>
+
+      <!-- BLANCO, imagen a la derecha -->
+      <section class="service-feature reverse" id="srv-estetico">
+        <div class="container">
+          <div class="split">
+            <img
                 src="https://images.unsplash.com/photo-1665944956738-7bde2372622d?auto=format&fit=crop&w=1200&q=85"
                 alt="Cuidado estético"
               />
@@ -176,8 +222,7 @@
                   >Cotizar servicio</a
                 >
               </div>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
     </main>
